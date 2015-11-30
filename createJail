@@ -1,0 +1,19 @@
+#!/bin/bash
+ruleFile=$1
+logFile=$2
+echo /etc/fail2ban/jail.d/$ruleFile.conf
+echo $logFile
+
+cat <<EOF > /etc/fail2ban/jail.d/$ruleFile.conf
+[$ruleFile]
+enabled = true
+filter = $ruleFile
+action = iptables-multiport[name=$ruleFile, port="http,https"]
+logpath = $logFile
+bantime = 600 # 10 minutes
+maxretry = 6
+EOF
+
+/show/file /etc/fail2ban/jail.d/$ruleFile.conf
+
+service fail2ban restart

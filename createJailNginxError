@@ -1,0 +1,3 @@
+#!/bin/bash
+ruleFile=$1
+/do/fail2ban/createJail $ruleFile /var/log/nginx/error.log

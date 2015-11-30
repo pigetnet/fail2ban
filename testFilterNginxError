@@ -1,0 +1,4 @@
+#!/bin/bash
+filter=$1
+/do/fail2ban/testFilter /var/log/nginx/error.log $filter
+

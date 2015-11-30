@@ -1,0 +1,5 @@
+#!/bin/bash
+logfile=$1
+filter=$2
+
+fail2ban-regex $logfile /etc/fail2ban/filter.d/$filter.conf 
