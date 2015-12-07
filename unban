@@ -1,0 +1,4 @@
+#!/bin/bash
+filter=$1
+fail2ban-client reload $filter
+fail2ban-client status $filter

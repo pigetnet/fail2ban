@@ -10,7 +10,7 @@ enabled = true
 filter = $ruleFile
 action = iptables-multiport[name=$ruleFile, port="http,https"]
 logpath = $logFile
-bantime = 600 # 10 minutes
+bantime = 600
 maxretry = 6
 EOF
 

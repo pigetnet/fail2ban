@@ -1,0 +1,6 @@
+#!/bin/bash
+source=$1
+sourceBasename=$(basename $source)
+if [[ -e $source ]];then
+	cp -v $source /etc/fail2ban/filter.d/$sourceBasename
+fi
